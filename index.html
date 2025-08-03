@@ -1,151 +1,565 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>E95 Автосервис</title>
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/car-1990681_1280.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.75);
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    header img {
-      max-width: 180px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #00ffff;
-    }
-
-    nav {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    nav a {
-      color: #00ffff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff00ff;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-    }
-
-    section h2 {
-      color: #00ffff;
-      margin-bottom: 10px;
-    }
-
-    .telegram-button {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
-      padding: 12px 24px;
-      font-size: 1em;
-      background: linear-gradient(90deg, #00ffff, #ff00ff);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      color: #000;
-      text-decoration: none;
-    }
-
-    .map {
-      width: 100%;
-      height: 300px;
-      margin-top: 20px;
-      border: none;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>СТО E-95 | Power and Precision | Чип-тюнинг в Одессе</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ 
+ body {
+ font-family: 'Montserrat', sans-serif;
+ color: #fff;
+ background: #0c0c0c;
+ overflow-x: hidden;
+ position: relative;
+ min-height: 100vh;
+ }
+ 
+ body::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ filter: brightness(0.3);
+ z-index: -1;
+ }
+ 
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+ 
+ header {
+ padding: 30px 0 20px;
+ position: relative;
+ z-index: 10;
+ text-align: center;
+ }
+ 
+ .logo-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 30px;
+ }
+ 
+ .logo-main {
+ font-family: 'Oswald', sans-serif;
+ font-size: 5rem;
+ font-weight: 800;
+ color: #ff9d00;
+ text-shadow: 0 0 15px rgba(255, 157, 0, 0.7);
+ letter-spacing: 3px;
+ margin-bottom: 10px;
+ }
+ 
+ .logo-subtitle {
+ font-family: 'Oswald', sans-serif;
+ font-size: 1.8rem;
+ font-weight: 400;
+ letter-spacing: 6px;
+ text-transform: uppercase;
+ color: #fff;
+ position: relative;
+ padding: 0 15px;
+ margin-top: -10px;
+ }
+ 
+ .logo-subtitle::before,
+ .logo-subtitle::after {
+ content: "";
+ position: absolute;
+ top: 50%;
+ width: 40px;
+ height: 2px;
+ background: #ff9d00;
+ }
+ 
+ .logo-subtitle::before {
+ left: -45px;
+ }
+ 
+ .logo-subtitle::after {
+ right: -45px;
+ }
+ 
+ .hero {
+ text-align: center;
+ padding: 30px 0 50px;
+ position: relative;
+ z-index: 10;
+ }
+ 
+ .hero h2 {
+ font-family: 'Oswald', sans-serif;
+ font-size: 2.5rem;
+ text-transform: uppercase;
+ margin-bottom: 30px;
+ letter-spacing: 2px;
+ color: #fff;
+ text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+ }
+ 
+ .hero p {
+ font-size: 1.4rem;
+ max-width: 700px;
+ margin: 0 auto 40px;
+ line-height: 1.7;
+ color: #f5f5f5;
+ }
+ 
+ .contact-box {
+ background: rgba(15, 15, 15, 0.85);
+ border-radius: 15px;
+ padding: 40px;
+ max-width: 500px;
+ margin: 0 auto;
+ border: 2px solid #ff9d00;
+ box-shadow: 0 0 30px rgba(255, 157, 0, 0.3);
+ transition: transform 0.3s ease;
+ }
+ 
+ .contact-box:hover {
+ transform: translateY(-5px);
+ }
+ 
+ .contact-item {
+ display: flex;
+ align-items: center;
+ margin-bottom: 25px;
+ padding: 15px;
+ background: rgba(30, 30, 30, 0.7);
+ border-radius: 10px;
+ transition: all 0.3s ease;
+ }
+ 
+ .contact-item:hover {
+ background: rgba(40, 40, 40, 0.9);
+ transform: translateX(5px);
+ }
+ 
+ .contact-icon {
+ width: 60px;
+ height: 60px;
+ background: linear-gradient(135deg, #ff9d00, #e6c300);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-right: 20px;
+ font-size: 1.8rem;
+ box-shadow: 0 0 15px rgba(255, 157, 0, 0.4);
+ }
+ 
+ .contact-details {
+ text-align: left;
+ }
+ 
+ .contact-details h3 {
+ font-size: 1.4rem;
+ margin-bottom: 5px;
+ color: #ff9d00;
+ }
+ 
+ .contact-details p {
+ font-size: 1.2rem;
+ color: #e6e6e6;
+ }
+ 
+ .contact-details a {
+ color: #fff;
+ text-decoration: none;
+ transition: color 0.3s ease;
+ }
+ 
+ .contact-details a:hover {
+ color: #ff9d00;
+ text-decoration: underline;
+ }
+ 
+ .services {
+ padding: 50px 0 40px;
+ text-align: center;
+ }
+ 
+ .services h2 {
+ font-family: 'Oswald', sans-serif;
+ font-size: 2.5rem;
+ margin-bottom: 50px;
+ text-transform: uppercase;
+ color: #ff9d00;
+ letter-spacing: 2px;
+ }
+ 
+ .service-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 30px;
+ max-width: 1000px;
+ margin: 0 auto;
+ }
+ 
+ .service-card {
+ background: rgba(15, 15, 15, 0.8);
+ border-radius: 10px;
+ padding: 30px 20px;
+ border: 1px solid #333;
+ transition: all 0.3s ease;
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ .service-card:hover {
+ transform: translateY(-10px);
+ border-color: #ff9d00;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .service-icon {
+ font-size: 2.5rem;
+ color: #ff9d00;
+ margin-bottom: 20px;
+ }
+ 
+ .service-card h3 {
+ font-size: 1.4rem;
+ margin-bottom: 15px;
+ color: #fff;
+ }
+ 
+ .service-card p {
+ color: #ccc;
+ line-height: 1.6;
+ }
+ 
+ .special-service {
+ background: rgba(20, 10, 0, 0.8);
+ border: 2px solid #ff9d00;
+ }
+ 
+ .special-service::before {
+ content: "";
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 200%;
+ height: 200%;
+ background: linear-gradient(45deg, transparent, rgba(255, 157, 0, 0.2), transparent);
+ transform: rotate(45deg);
+ animation: shine 3s infinite;
+ }
+ 
+ footer {
+ background: rgba(10, 10, 10, 0.9);
+ padding: 30px 0;
+ text-align: center;
+ margin-top: 80px;
+ border-top: 1px solid #333;
+ }
+ 
+ .copyright {
+ font-size: 1rem;
+ color: #999;
+ }
+ 
+ .map {
+ margin-top: 50px;
+ text-align: center;
+ padding-bottom: 30px;
+ }
+ 
+ .map h3 {
+ font-family: 'Oswald', sans-serif;
+ font-size: 1.8rem;
+ margin-bottom: 20px;
+ color: #ff9d00;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+ 
+ .map-placeholder {
+ height: 300px;
+ background: rgba(30, 30, 30, 0.7);
+ border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 0 auto;
+ max-width: 800px;
+ border: 1px solid #444;
+ font-size: 1.2rem;
+ color: #999;
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ .map-placeholder::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(45deg, 
+ rgba(255, 157, 0, 0.1), 
+ rgba(255, 157, 0, 0.05), 
+ rgba(255, 157, 0, 0.1));
+ z-index: 1;
+ }
+ 
+ .map-content {
+ position: relative;
+ z-index: 2;
+ }
+ 
+ .map-content i {
+ margin-right: 15px;
+ color: #ff9d00;
+ }
+ 
+ @keyframes shine {
+ 0% { transform: rotate(45deg) translateX(-50%); }
+ 100% { transform: rotate(45deg) translateX(50%); }
+ }
+ 
+ @media (max-width: 768px) {
+ .logo-main {
+ font-size: 3.8rem;
+ }
+ 
+ .logo-subtitle {
+ font-size: 1.4rem;
+ letter-spacing: 4px;
+ }
+ 
+ .logo-subtitle::before,
+ .logo-subtitle::after {
+ width: 20px;
+ }
+ 
+ .logo-subtitle::before {
+ left: -25px;
+ }
+ 
+ .logo-subtitle::after {
+ right: -25px;
+ }
+ 
+ .hero h2 {
+ font-size: 2.0rem;
+ }
+ 
+ .hero p {
+ font-size: 1.2rem;
+ }
+ 
+ .contact-box {
+ padding: 25px;
+ }
+ 
+ .contact-item {
+ flex-direction: column;
+ text-align: center;
+ }
+ 
+ .contact-icon {
+ margin-right: 0;
+ margin-bottom: 15px;
+ }
+ }
+ 
+ @media (max-width: 480px) {
+ .logo-main {
+ font-size: 3.0rem;
+ }
+ 
+ .logo-subtitle {
+ font-size: 1.1rem;
+ letter-spacing: 3px;
+ }
+ 
+ .hero h2 {
+ font-size: 1.7rem;
+ }
+ 
+ .logo-subtitle::before,
+ .logo-subtitle::after {
+ width: 15px;
+ }
+ 
+ .logo-subtitle::before {
+ left: -20px;
+ }
+ 
+ .logo-subtitle::after {
+ right: -20px;
+ }
+ }
+ </style>
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      <img src="https://i.imgur.com/FjP3QdP.png" alt="Логотип E95" />
-      <h1>E95 Автосервис</h1>
-    </header>
-
-    <nav>
-      <a href="#about">Про нас</a>
-      <a href="#services">Услуги</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-
-    <section id="about">
-      <h2>Про нас</h2>
-      <p>СТО E95 — это надёжный партнёр в ремонте и обслуживании вашего автомобиля. Мы используем современное оборудование, компьютерную диагностику и многолетний опыт наших специалистов.</p>
-    </section>
-
-    <section id="services">
-      <h2>Наши услуги</h2>
-      <ul>
-        <li>Компьютерная диагностика</li>
-        <li>Ремонт топливной системы</li>
-        <li>Удаление DPF / EGR / AdBlue</li>
-        <li>Ремонт двигателя и ходовой</li>
-        <li>Автоелектрик</li>
-      </ul>
-    </section>
-
-    <section id="contacts">
-      <h2>Контакты</h2>
-      <p><strong>Адрес:</strong> г. Одесса, Дальницкое шоссе 16</p>
-      <p><strong>Телефон:</strong> <a href="tel:+380672949352" style="color:#00ffff;">067 294 93 52</a></p>
-      <p><strong>Telegram:</strong> <a href="https://t.me/E95SupportBot" style="color:#00ffff;">@E95SupportBot</a></p>
-
-      <a class="telegram-button" href="https://t.me/E95SupportBot" target="_blank">
-        Написать в Telegram
-      </a>
-
-      <iframe class="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.0141893959785!2d30.7100746!3d46.4198714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631f9fadc2d9b%3A0x2a6e8e245d1774ef!2z0JTQstC-0YDQtdC70YzQvdCwINCf0LXRgNC10L3QvtC00L7QstGB0LrQvtCz0L4gMTY!5e0!3m2!1sru!2sua!4v1695040927390!5m2!1sru!2sua"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
-
-    <footer>
-      &copy; 2025 E95 Автосервис. Все права защищены.
-    </footer>
-  </div>
+ <div class="container">
+ <header>
+ <div class="logo-container">
+ <div class="logo-main">E-95</div>
+ <div class="logo-subtitle">POWER AND PRECISION</div>
+ </div>
+ </header>
+ 
+ <section class="hero">
+ <h2>Професійний чип-тюнінг та діагностика</h2>
+ <p>Сучасне обладнання, досвідчені майстри та якісне обслуговування для вашого автомобіля</p>
+ 
+ <div class="contact-box">
+ <div class="contact-item">
+ <div class="contact-icon">
+ <i class="fas fa-phone"></i>
+ </div>
+ <div class="contact-details">
+ <h3>Телефон</h3>
+ <p><a href="tel:0672949352">067 294 93 52</a></p>
+ </div>
+ </div>
+ 
+ <div class="contact-item">
+ <div class="contact-icon">
+ <i class="fas fa-map-marker-alt"></i>
+ </div>
+ <div class="contact-details">
+ <h3>Адреса</h3>
+ <p>Дальницкое шоссе 16, Одеса</p>
+ </div>
+ </div>
+ 
+ <div class="contact-item">
+ <div class="contact-icon">
+ <i class="fas fa-clock"></i>
+ </div>
+ <div class="contact-details">
+ <h3>Графік роботи</h3>
+ <p>Пн-Пт: 08:00 - 20:00<br>Сб-Нд: 09:00 - 18:00</p>
+ </div>
+ </div>
+ </div>
+ </section>
+ 
+ <section class="services">
+ <h2>Наші спеціалізації</h2>
+ <div class="service-grid">
+ <div class="service-card special-service">
+ <div class="service-icon">
+ <i class="fas fa-microchip"></i>
+ </div>
+ <h3>Чіп-тюнінг</h3>
+ <p>Оптимізація роботи двигуна, збільшення потужності та крутного моменту, зниження витрати палива</p>
+ </div>
+ 
+ <div class="service-card">
+ <div class="service-icon">
+ <i class="fas fa-tools"></i>
+ </div>
+ <h3>Видалення AdBlue</h3>
+ <p>Повне видалення системи AdBlue з програмним та апаратним відключенням</p>
+ </div>
+ 
+ <div class="service-card">
+ <div class="service-icon">
+ <i class="fas fa-engine"></i>
+ </div>
+ <h3>Видалення EGR</h3>
+ <p>Відключення клапана EGR, програмне видалення, чистка та профілактика</p>
+ </div>
+ 
+ <div class="service-card">
+ <div class="service-icon">
+ <i class="fas fa-filter"></i>
+ </div>
+ <h3>Видалення DPF</h3>
+ <p>Програмне та фізичне видалення сажового фільтра DPF/FAP</p>
+ </div>
+ 
+ <div class="service-card">
+ <div class="service-icon">
+ <i class="fas fa-fan"></i>
+ </div>
+ <h3>Видалення FLAPS</h3>
+ <p>Відключення системи клапанів FLAPS для покращення динаміки двигуна</p>
+ </div>
+ 
+ <div class="service-card">
+ <div class="service-icon">
+ <i class="fas fa-bolt"></i>
+ </div>
+ <h3>Електрика</h3>
+ <p>Діагностика та ремонт електросистем автомобіля, установка додаткового обладнання</p>
+ </div>
+ </div>
+ </section>
+ 
+ <div class="map">
+ <h3>Ми на мапі</h3>
+ <div class="map-placeholder">
+ <div class="map-content">
+ <i class="fas fa-map-marked-alt fa-3x"></i>
+ <span>Дальницкое шоссе 16, Одеса</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+ <footer>
+ <div class="container">
+ <p class="copyright">© 2023 СТО E-95. Всі права захищені.</p>
+ </div>
+ </footer>
+ 
+ <script>
+ document.addEventListener('DOMContentLoaded', function() {
+ // Анимация при загрузке страницы
+ setTimeout(function() {
+ document.querySelector('.hero').style.opacity = 1;
+ document.querySelector('.hero').style.transform = 'translateY(0)';
+ }, 300);
+ 
+ // Добавляем плавное появление элементов
+ const items = document.querySelectorAll('.contact-item, .service-card');
+ items.forEach((item, index) => {
+ item.style.transitionDelay = `${index * 0.1}s`;
+ });
+ 
+ // Счетчик звонков (демонстрационный)
+ const phoneLink = document.querySelector('a[href^="tel:"]');
+ phoneLink.addEventListener('click', function() {
+ alert('Дзвінок на номер: 067 294 93 52');
+ });
+ 
+ // Анимация для специальных услуг
+ const specialServices = document.querySelectorAll('.special-service');
+ specialServices.forEach(service => {
+ service.addEventListener('mouseenter', () => {
+ service.style.boxShadow = '0 0 25px rgba(255, 157, 0, 0.7)';
+ });
+ 
+ service.addEventListener('mouseleave', () => {
+ service.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+ });
+ });
+ });
+ </script>
 </body>
 </html>
