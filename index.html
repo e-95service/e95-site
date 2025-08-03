@@ -264,11 +264,91 @@
  animation: shine 3s infinite;
  }
  
+ .telegram-section {
+ background: rgba(15, 15, 15, 0.85);
+ border-radius: 15px;
+ padding: 40px;
+ max-width: 800px;
+ margin: 50px auto;
+ border: 2px solid #0088cc;
+ box-shadow: 0 0 30px rgba(0, 136, 204, 0.3);
+ position: relative;
+ overflow: hidden;
+ text-align: center;
+ }
+ 
+ .telegram-section::before {
+ content: "";
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 200%;
+ height: 200%;
+ background: linear-gradient(45deg, transparent, rgba(0, 136, 204, 0.1), transparent);
+ transform: rotate(45deg);
+ animation: shine 4s infinite;
+ }
+ 
+ .telegram-content {
+ position: relative;
+ z-index: 2;
+ }
+ 
+ .telegram-icon {
+ font-size: 5rem;
+ color: #0088cc;
+ margin-bottom: 20px;
+ animation: pulse-blue 2s infinite;
+ }
+ 
+ .telegram-section h2 {
+ font-family: 'Oswald', sans-serif;
+ font-size: 2.2rem;
+ margin-bottom: 20px;
+ color: #0088cc;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+ 
+ .telegram-section p {
+ font-size: 1.2rem;
+ color: #e6e6e6;
+ max-width: 600px;
+ margin: 0 auto 30px;
+ line-height: 1.7;
+ }
+ 
+ .telegram-btn {
+ display: inline-block;
+ background: linear-gradient(135deg, #0088cc, #005f8b);
+ color: white;
+ padding: 15px 30px;
+ font-size: 1.3rem;
+ border-radius: 50px;
+ text-decoration: none;
+ transition: all 0.3s ease;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+ position: relative;
+ overflow: hidden;
+ border: none;
+ cursor: pointer;
+ font-weight: 600;
+ }
+ 
+ .telegram-btn:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+ }
+ 
+ .telegram-btn i {
+ margin-right: 10px;
+ }
+ 
  footer {
  background: rgba(10, 10, 10, 0.9);
  padding: 30px 0;
  text-align: center;
- margin-top: 80px;
+ margin-top: 50px;
  border-top: 1px solid #333;
  }
  
@@ -337,6 +417,21 @@
  100% { transform: rotate(45deg) translateX(50%); }
  }
  
+ @keyframes pulse-blue {
+ 0% {
+ transform: scale(1);
+ text-shadow: 0 0 0 rgba(0, 136, 204, 0.7);
+ }
+ 70% {
+ transform: scale(1.05);
+ text-shadow: 0 0 20px rgba(0, 136, 204, 0.9);
+ }
+ 100% {
+ transform: scale(1);
+ text-shadow: 0 0 0 rgba(0, 136, 204, 0);
+ }
+ }
+ 
  @media (max-width: 768px) {
  .logo-main {
  font-size: 3.8rem;
@@ -381,6 +476,14 @@
  margin-right: 0;
  margin-bottom: 15px;
  }
+ 
+ .telegram-section {
+ padding: 30px 20px;
+ }
+ 
+ .telegram-icon {
+ font-size: 3.5rem;
+ }
  }
  
  @media (max-width: 480px) {
@@ -408,6 +511,15 @@
  
  .logo-subtitle::after {
  right: -20px;
+ }
+ 
+ .telegram-section h2 {
+ font-size: 1.8rem;
+ }
+ 
+ .telegram-btn {
+ padding: 12px 25px;
+ font-size: 1.1rem;
  }
  }
  </style>
@@ -511,6 +623,19 @@
  </div>
  </section>
  
+ <section class="telegram-section">
+ <div class="telegram-content">
+ <div class="telegram-icon">
+ <i class="fab fa-telegram"></i>
+ </div>
+ <h2>Наш Telegram Бот</h2>
+ <p>Замовляйте послуги, отримуйте консультацію та записуйтесь на обслуговування через нашого Telegram бота. Швидко, зручно та ефективно!</p>
+ <a href="https://t.me/E95_STO_bot" class="telegram-btn" target="_blank">
+ <i class="fab fa-telegram"></i> Перейти до бота
+ </a>
+ </div>
+ </section>
+ 
  <div class="map">
  <h3>Ми на мапі</h3>
  <div class="map-placeholder">
@@ -537,7 +662,7 @@
  }, 300);
  
  // Добавляем плавное появление элементов
- const items = document.querySelectorAll('.contact-item, .service-card');
+ const items = document.querySelectorAll('.contact-item, .service-card, .telegram-section');
  items.forEach((item, index) => {
  item.style.transitionDelay = `${index * 0.1}s`;
  });
