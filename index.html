@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E95 Автосервис</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/car-1990681_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header img {
+      max-width: 180px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #00ffff;
+    }
+
+    nav {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    nav a {
+      color: #00ffff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    section h2 {
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .telegram-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 12px 24px;
+      font-size: 1em;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .map {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <img src="https://i.imgur.com/FjP3QdP.png" alt="Логотип E95" />
+      <h1>E95 Автосервис</h1>
+    </header>
+
+    <nav>
+      <a href="#about">Про нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <section id="about">
+      <h2>Про нас</h2>
+      <p>СТО E95 — это надёжный партнёр в ремонте и обслуживании вашего автомобиля. Мы используем современное оборудование, компьютерную диагностику и многолетний опыт наших специалистов.</p>
+    </section>
+
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <ul>
+        <li>Компьютерная диагностика</li>
+        <li>Ремонт топливной системы</li>
+        <li>Удаление DPF / EGR / AdBlue</li>
+        <li>Ремонт двигателя и ходовой</li>
+        <li>Автоелектрик</li>
+      </ul>
+    </section>
+
+    <section id="contacts">
+      <h2>Контакты</h2>
+      <p><strong>Адрес:</strong> г. Одесса, Дальницкое шоссе 16</p>
+      <p><strong>Телефон:</strong> <a href="tel:+380672949352" style="color:#00ffff;">067 294 93 52</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/E95SupportBot" style="color:#00ffff;">@E95SupportBot</a></p>
+
+      <a class="telegram-button" href="https://t.me/E95SupportBot" target="_blank">
+        Написать в Telegram
+      </a>
+
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2748.0141893959785!2d30.7100746!3d46.4198714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631f9fadc2d9b%3A0x2a6e8e245d1774ef!2z0JTQstC-0YDQtdC70YzQvdCwINCf0LXRgNC10L3QvtC00L7QstGB0LrQvtCz0L4gMTY!5e0!3m2!1sru!2sua!4v1695040927390!5m2!1sru!2sua"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <footer>
+      &copy; 2025 E95 Автосервис. Все права защищены.
+    </footer>
+  </div>
+</body>
+</html>
