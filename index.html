@@ -408,6 +408,114 @@
  margin-bottom: 10px;
  }
  
+ .social-section {
+ background: rgba(15, 15, 15, 0.85);
+ border-radius: 15px;
+ padding: 40px;
+ max-width: 800px;
+ margin: 50px auto;
+ border: 2px solid #ff9d00;
+ box-shadow: 0 0 30px rgba(255, 157, 0, 0.3);
+ position: relative;
+ overflow: hidden;
+ text-align: center;
+ }
+ 
+ .social-section h2 {
+ font-family: 'Oswald', sans-serif;
+ font-size: 2.2rem;
+ margin-bottom: 40px;
+ color: #ff9d00;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+ 
+ .social-grid {
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+ flex-wrap: wrap;
+ }
+ 
+ .social-card {
+ background: rgba(30, 30, 30, 0.8);
+ border-radius: 15px;
+ padding: 30px;
+ width: 300px;
+ transition: all 0.3s ease;
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ .social-card:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+ }
+ 
+ .instagram-card {
+ border: 2px solid #E1306C;
+ }
+ 
+ .tiktok-card {
+ border: 2px solid #69C9D0;
+ }
+ 
+ .social-icon {
+ font-size: 4rem;
+ margin-bottom: 20px;
+ }
+ 
+ .instagram-icon {
+ color: #E1306C;
+ background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+ 
+ .tiktok-icon {
+ color: #69C9D0;
+ }
+ 
+ .social-card h3 {
+ font-size: 1.6rem;
+ margin-bottom: 15px;
+ }
+ 
+ .social-card p {
+ color: #ccc;
+ margin-bottom: 25px;
+ line-height: 1.6;
+ }
+ 
+ .social-btn {
+ display: inline-block;
+ padding: 12px 30px;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: bold;
+ transition: all 0.3s ease;
+ }
+ 
+ .instagram-btn {
+ background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+ color: white;
+ }
+ 
+ .tiktok-btn {
+ background: #000;
+ color: white;
+ border: 2px solid #69C9D0;
+ }
+ 
+ .social-btn:hover {
+ transform: scale(1.05);
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .social-btn i {
+ margin-right: 10px;
+ }
+ 
  footer {
  background: rgba(10, 10, 10, 0.9);
  padding: 30px 0;
@@ -533,6 +641,16 @@
  .bot-features {
  flex-direction: column;
  align-items: center;
+ }
+ 
+ .social-grid {
+ flex-direction: column;
+ align-items: center;
+ }
+ 
+ .social-card {
+ width: 100%;
+ max-width: 400px;
  }
  }
  
@@ -749,6 +867,35 @@
  </div>
  </section>
  
+ <section class="social-section">
+ <h2>Приєднуйтесь до нас у соцмережах</h2>
+ <p>Слідкуйте за останніми роботами, акціями та цікавими проєктами</p>
+ 
+ <div class="social-grid">
+ <div class="social-card instagram-card">
+ <div class="social-icon">
+ <i class="fab fa-instagram instagram-icon"></i>
+ </div>
+ <h3>Instagram</h3>
+ <p>Фото та відео з нашого СТО, процеси ремонту та тюнінгу, відгуки клієнтів</p>
+ <a href="https://www.instagram.com/garage__e95?igsh=bTRhNW5iZDBqMnhy" class="social-btn instagram-btn" target="_blank">
+ <i class="fab fa-instagram"></i> Підписатися
+ </a>
+ </div>
+ 
+ <div class="social-card tiktok-card">
+ <div class="social-icon">
+ <i class="fab fa-tiktok tiktok-icon"></i>
+ </div>
+ <h3>TikTok</h3>
+ <p>Короткі відео про наші роботи, цікаві випадки та лайфхаки для автовласників</p>
+ <a href="https://www.tiktok.com/@garage_e95?_t=ZM-8ya3cDp3j7d&_r=1" class="social-btn tiktok-btn" target="_blank">
+ <i class="fab fa-tiktok"></i> Переглянути
+ </a>
+ </div>
+ </div>
+ </section>
+ 
  <div class="map">
  <h3>Ми на мапі</h3>
  <div class="map-container">
@@ -778,7 +925,7 @@
  }, 300);
  
  // Добавляем плавное появление элементов
- const items = document.querySelectorAll('.contact-item, .service-card, .telegram-section, .feature-card');
+ const items = document.querySelectorAll('.contact-item, .service-card, .telegram-section, .feature-card, .social-card');
  items.forEach((item, index) => {
  item.style.transitionDelay = `${index * 0.1}s`;
  });
